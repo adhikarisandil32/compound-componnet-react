@@ -11,7 +11,7 @@ type ProductCardElementProps = {
   className?: string
 } & HTMLAttributes<HTMLDivElement>
 
-export default function ProductCard({ children, className, ...props }: ProductCardProps) {
+export default function ProductCard({ children, className, productInfo, ...props }: ProductCardProps) {
   return (
     <div
       className={className}

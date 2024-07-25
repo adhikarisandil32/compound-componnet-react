@@ -3,7 +3,7 @@ import Products from "./pages/Products"
 function App() {
   return (
     <>
-      <Products />
+      <Products columns={3} />
     </>
   )
 }

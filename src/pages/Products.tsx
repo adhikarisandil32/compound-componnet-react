@@ -1,7 +1,12 @@
 import React from "react"
 import ProductCard from "../components/ProductCard"
+import { gridCols } from "../utils/gridCols"
 
-export default function Products() {
+type ProductsProps = {
+  columns: keyof typeof gridCols
+}
+
+export default function Products({ columns }: ProductsProps) {
   const products = Array.from({ length: 9 }, (_, i) => {
     return {
       title: `Product ${i + 1}`,
@@ -13,7 +18,7 @@ export default function Products() {
 
   return (
     <div className="container py-4">
-      <div className="grid grid-cols-3 gap-4">
+      <div className={`grid ${gridCols[columns]} gap-4`}>
         {products.map((product, idx) => (
           <ProductCard
             key={idx}
