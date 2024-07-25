@@ -1,15 +1,15 @@
-import React from "react"
+import React, { HTMLAttributes } from "react"
 
 type ProductCardProps = {
   children: React.ReactNode
   productInfo: {}
   className?: string
-}
+} & HTMLAttributes<HTMLDivElement>
 
-type EachElement = {
+type ProductCardElementProps = {
   children: React.ReactNode
   className?: string
-}
+} & HTMLAttributes<HTMLDivElement>
 
 export default function ProductCard({ children, className, ...props }: ProductCardProps) {
   return (
@@ -22,7 +22,7 @@ export default function ProductCard({ children, className, ...props }: ProductCa
   )
 }
 
-ProductCard.Title = function ({ children, className, ...props }: EachElement) {
+ProductCard.Title = function ({ children, className, ...props }: ProductCardElementProps) {
   return (
     <h2
       className={className}
@@ -33,7 +33,7 @@ ProductCard.Title = function ({ children, className, ...props }: EachElement) {
   )
 }
 
-ProductCard.Description = function ({ children, className, ...props }: EachElement) {
+ProductCard.Description = function ({ children, className, ...props }: ProductCardElementProps) {
   return (
     <p
       className={className}
@@ -44,7 +44,7 @@ ProductCard.Description = function ({ children, className, ...props }: EachEleme
   )
 }
 
-ProductCard.Price = function ({ children, className, ...props }: EachElement) {
+ProductCard.Price = function ({ children, className, ...props }: ProductCardElementProps) {
   return (
     <p className={className}>
       <span {...props}>{children}</span>

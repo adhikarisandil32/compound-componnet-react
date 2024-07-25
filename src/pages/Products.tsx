@@ -19,8 +19,9 @@ export default function Products() {
             key={idx}
             productInfo={product}
             className="space-y-2 p-4 rounded-md border-2 border-gray-400"
+            onClick={() => console.log(product)}
           >
-            <ProductCard.Title className="text-center text-lg ">{product.title}</ProductCard.Title>
+            <ProductCard.Title className="text-center text-lg">{product.title}</ProductCard.Title>
             <ProductCard.Description className="text-gray-400">{product.description}</ProductCard.Description>
             <ProductCard.Price className="text-gray-600 text-center">${product.price}</ProductCard.Price>
           </ProductCard>
